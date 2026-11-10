@@ -1,7 +1,14 @@
 import { useState, useEffect, useContext } from 'react';
 import { TemaContext } from './TemaContext.js';
 
-
+ const estatusTema = {
+        backgroundColor: tema === 'oscuro' ? '#333' : '#f0f0f0',
+        color: tema === 'oscuro' ? '#fff' : '#000',
+        padding: '20px',
+        borderRadius: '8px',
+        textAlign: 'left',
+        margin: '20px 0'
+    };
 
 export function Cronometro(){
 
@@ -20,16 +27,6 @@ export function Cronometro(){
         return () => clearInterval(intervalo);
     }, []);
 
- 
-
-    const estatusTema = {
-        backgroundColor: tema === 'oscuro' ? '#333' : '#f0f0f0',
-        color: tema === 'oscuro' ? '#fff' : '#000',
-        padding: '20px',
-        borderRadius: '8px',
-        textAlign: 'left',
-        margin: '20px 0'
-    };
 
     return(
         <div style={estatusTema}>
