@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 import Saludo from './components/saludo.jsx'
 import Calculadora from './components/Calculadora.jsx'
+import { Cronometro } from './components/Cronometro.jsx'
+import { TemaContext } from './components/TemaContext.js'
+
 
 
 const animales = [
@@ -23,15 +23,30 @@ const productos = [
   { id: 4, titulo: 'Lapiz', descripcion: 'Artilugio para escribir con grafito', precio: 0.50, oferta: false },
 ]
 
-
 function App() {
-  
+  const [tema, setTema] = useState('claro')
+  const cambiarTema = () => {
+    setTema((temaActual) => temaActual === 'claro' ? 'oscuro' : 'claro')
+  }
 
   return (
     
-<div className="container my-4">
+<div className={`container my-4 app-shell tema-${tema}`}>
       <h1>Mi primera aplicación React</h1>
       <Saludo nombre="Alex" />
+      
+     
+      <TemaContext.Provider value={{ tema }}>
+        <div style = {{ padding: '20px'}}>
+    <h1> Práctica de Cronómetro</h1>
+
+      <button onClick={cambiarTema}>Cambiar a modo {tema === 'claro' ? 'oscuro' : 'claro'}
+     
+      </button>
+      <Cronometro />
+        </div>
+          
+      </TemaContext.Provider>
       <Calculadora />
       <div calssName = " card h-100">
       < div className= "card-body">

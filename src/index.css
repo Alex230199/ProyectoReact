@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+.app-shell {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none;
+	min-height: 100vh;
+    text-align: left;
+	margin: 0 !important;
+	padding: 1.5rem max(1rem, calc((100vw - 1140px) / 2));
+	color: #202824;
+	background: #f3f6f4;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.app-shell.tema-oscuro {
+	color: #f1f4f2;
+	background: #171d1b;
+}
+
+.app-shell.tema-oscuro .card {
+	color: #f1f4f2;
+	background: #242c29;
+	border-color: #46514c;
+}
