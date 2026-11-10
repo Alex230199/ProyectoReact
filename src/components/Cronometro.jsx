@@ -20,6 +20,8 @@ export function Cronometro(){
         return () => clearInterval(intervalo);
     }, []);
 
+ 
+
     const estatusTema = {
         backgroundColor: tema === 'oscuro' ? '#333' : '#f0f0f0',
         color: tema === 'oscuro' ? '#fff' : '#000',
