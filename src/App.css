@@ -1,3 +1,75 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  margin: 0;
+}
+
+.actividades {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.actividad {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #d1d8d4;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.actividad > h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}
+
+.actividad > ul {
+  margin-bottom: 0;
+}
+
+.producto + .producto {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #d1d8d4;
+}
+
+.producto h3 {
+  font-size: 1rem;
+}
+
+.cronometro-contenido h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.cronometro-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tema-oscuro .actividad {
+  border-color: #46514c;
+  background: #242c29;
+}
+
+.tema-oscuro .producto + .producto {
+  border-color: #46514c;
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
