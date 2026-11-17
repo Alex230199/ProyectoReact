@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 
-function Formulario() {
+function Formulario({comprobacion}) {
   const nombreInput = useRef(null)
   const [nombre, setNombre] =  useState('')
 
@@ -14,7 +14,11 @@ function Formulario() {
         nombreInput.current?.style.setProperty('color', 'black')
 
     }
-  }, [nombre])
+
+    if (nombreInput?.current?.value.length == "hola"){
+        comprobacion
+  }
+}, [nombre])
 
   return (
     <form>

@@ -30,9 +30,24 @@ function App() {
   const [tema, setTema] = useState('claro')
   const cambiarTema = () => {
     setTema((temaActual) => temaActual === 'claro' ? 'oscuro' : 'claro')
-  }
+
+     }
+
+    const titulo = useRef(null)
+
+    function changeBorder(){
+      titulo?.current?.style.setProperty('border', '2px solid red')
+    }
+      
+ 
+
+
+    
+  
 
   return (
+
+  
     
     <div className={`container my-4 app-shell tema-${tema}`}>
       <header className="app-header">
@@ -59,6 +74,14 @@ function App() {
           <Calculadora />
         </section>
 
+        <TemaContexto value ="claro">
+        <h1 ref={titulo}>Aplicacion con Tema</h1>
+        <Formulario comprobacion={changeBorder}></Formulario>
+        <div className="container my-4">
+          
+        </div>
+
+        </TemaContexto>
         <section className="actividad">
           <h2>Formulario</h2>
           <Formulario />
