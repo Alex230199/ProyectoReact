@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 function FormularioAutoenfocado() {
   const nombreInput = useRef(null)
