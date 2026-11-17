@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 
-function FormularioAutoenfocado() {
+function Formulario() {
   const nombreInput = useRef(null)
   const [nombre, setNombre] =  useState('')
 
@@ -12,12 +12,9 @@ function FormularioAutoenfocado() {
         nombre.input.current?.style.setProperty('color', 'red')
     } else {
         nombreInput.current?.style.setProperty('color', 'black')
+
     }
   }, [nombre])
-
-  const handleSubmit = (e) => {
-
-}
 
   return (
     <form>

@@ -5,7 +5,7 @@ import Calculadora from './components/Calculadora.jsx'
 import { Cronometro } from './components/Cronometro.jsx'
 import { TemaContext } from './components/TemaContext.js'
 import { Semaforo } from './components/Semaforo.jsx'
-import {Formulario} from './components/Formulario.jsx'
+import Formulario from './components/Formulario.jsx'
 
 
 
