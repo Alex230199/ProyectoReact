@@ -28,4 +28,4 @@ function FormularioAutoenfocado() {
   )
 } 
 
-export default Saludo;
+export default Formulario;
