@@ -5,6 +5,8 @@ import Calculadora from './components/Calculadora.jsx'
 import { Cronometro } from './components/Cronometro.jsx'
 import { TemaContext } from './components/TemaContext.js'
 import { Semaforo } from './components/Semaforo.jsx'
+import {Formulario} from './components/Formulario.jsx'
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
   }
 
   return (
+    
     <div className={`container my-4 app-shell tema-${tema}`}>
       <header className="app-header">
         <h1>Mi primera aplicación React</h1>
@@ -54,6 +57,11 @@ function App() {
         <section className="actividad">
           <h2>Calculadora</h2>
           <Calculadora />
+        </section>
+
+        <section className="actividad">
+          <h2>Formulario</h2>
+          <Formulario />
         </section>
 
         <section className="actividad">
