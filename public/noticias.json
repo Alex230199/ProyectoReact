@@ -1,0 +1,8 @@
+[
+  { "id": 1, "titulo": "Jornada de puertas abiertas",
+    "descripcion": "El centro abre sus puertas el próximo viernes." },
+  { "id": 2, "titulo": "Plazo de matrícula",
+    "descripcion": "Abierto el plazo de matrícula de los ciclos formativos." },
+  { "id": 3, "titulo": "Hackathon 2026",
+    "descripcion": "Inscríbete con tu equipo antes del día 15." }
+]

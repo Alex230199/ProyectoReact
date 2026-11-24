@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { TemaContext } from './TemaContext.js';
+import { useState, useEffect } from 'react';
+
 
 
 
@@ -10,8 +10,6 @@ export function Cronometro(){
     const [segundos, setSegundos] = useState(0);
     const [enMarcha, setEnMarcha] = useState(false);
 
-    const { tema } = useContext(TemaContext);
-
     useEffect(() => {
         let intervalo = null;
         if (enMarcha) {
@@ -20,11 +18,11 @@ export function Cronometro(){
             }, 1000);
         }
         return () => clearInterval(intervalo);
-    }, []);
+    }, [enMarcha]);
 
  
     return(
-            <div className="cronometro-contenido">
+            <div className={`cronometro-contenido ${enMarcha ? 'en-marcha' : ''}`}>
             <h2>Segundos que pasan: {segundos}</h2>
                 <div className="cronometro-botones">
                     <button type="button" className="btn btn-primary" onClick={() => setEnMarcha(true)}>Iniciar</button>

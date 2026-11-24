@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import Saludo from './components/saludo.jsx'
 import Calculadora from './components/Calculadora.jsx'
-import { Cronometro } from './components/Cronometro.jsx'
-import { TemaContext } from './components/TemaContext.js'
-import { Semaforo } from './components/Semaforo.jsx'
+import  {Cronometro}  from './components/Cronometro.jsx'
+import  {TemaContext}  from './components/TemaContext.js'
+import  {Semaforo}  from './components/Semaforo.jsx'
 import Formulario from './components/Formulario.jsx'
-
+import ListaUsuarios from './components/ListaUsuarios.jsx'
+import ListaNoticias from './components/ListaNoticias.jsx'
 
 
 
@@ -26,7 +27,7 @@ const productos = [
   { id: 4, titulo: 'Lapiz', descripcion: 'Artilugio para escribir con grafito', precio: 0.50, oferta: false },
 ]
 
-function App() {
+export default function App() {
   const [tema, setTema] = useState('claro')
   const cambiarTema = () => {
     setTema((temaActual) => temaActual === 'claro' ? 'oscuro' : 'claro')
@@ -39,11 +40,6 @@ function App() {
       titulo?.current?.style.setProperty('border', '2px solid red')
     }
       
- 
-
-
-    
-  
 
   return (
 
@@ -62,26 +58,31 @@ function App() {
           <Saludo nombre="Alex" />
         </section>
 
-        <TemaContext.Provider value={{ tema }}>
+        <TemaContext.Provider value={{ tema: 'claro' }}>
           <section className="actividad">
             <h2>Cronómetro</h2>
             <Cronometro />
           </section>
         </TemaContext.Provider>
 
+        <section className="usuarios">
+          <h2>listausuarios</h2>
+          <ListaUsuarios/>
+        </section>
+
         <section className="actividad">
           <h2>Calculadora</h2>
           <Calculadora />
         </section>
 
-        <TemaContexto value ="claro">
+       <TemaContext.Provider value={{ tema: 'claro' }}>
         <h1 ref={titulo}>Aplicacion con Tema</h1>
         <Formulario comprobacion={changeBorder}></Formulario>
         <div className="container my-4">
           
         </div>
 
-        </TemaContexto>
+        </TemaContext.Provider>
         <section className="actividad">
           <h2>Formulario</h2>
           <Formulario />
@@ -112,9 +113,11 @@ function App() {
             </div>
           ))}
         </section>
+
+        <ListaNoticias />
       </main>
     </div>
   )
 }
 
-export default App
+

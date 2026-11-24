@@ -1,3 +1,7 @@
+.cronometro-contenido.en-marcha {
+  background-color: #26332e;
+  color: #fff;
+}
 .app-header {
   display: flex;
   align-items: center;
@@ -46,6 +50,11 @@
 .cronometro-contenido h2 {
   margin: 0 0 12px;
   font-size: 1.1rem;
+}
+
+.cronometro-contenido.en-marcha {
+  background-color: #26332e;
+  color: #fff;
 }
 
 .cronometro-botones {
